@@ -1,5 +1,8 @@
 **A minimal C test "framework".**
 
+[![Build Status](https://secure.travis-ci.org/ReclaimSoftware/RSTest.png)](http://travis-ci.org/ReclaimSoftware/RSTest)
+
+
 ```c
 #include <RSTest.h>
 

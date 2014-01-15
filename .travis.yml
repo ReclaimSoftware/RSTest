@@ -1,0 +1,11 @@
+language: c
+script: "$CC -std=c99 -Wall -isystem ./ -o build.o -c RSTest.c && echo 'Built.'"
+compiler:
+  - clang
+  - gcc
+branches:
+  only:
+    - master
+notifications:
+  email:
+    - andrew@andrewschaaf.com
