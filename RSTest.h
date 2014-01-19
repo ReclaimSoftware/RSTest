@@ -25,6 +25,7 @@ void assert_null(char *x);
 FILE* assert_fopen(char *path, char *mode);
 
 
+// "private" (used from your .c, but only via macros)
 void RTest_describe(char *str);
 void RTest_startTest(char *str);
 void RTest_pendingTest(char *str);
