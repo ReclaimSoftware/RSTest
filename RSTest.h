@@ -6,8 +6,9 @@
 
 
 #define DESCRIBE(str)   RTest_describe(str);
-#define IT(str)         RTest_startTest(str);
 #define TEST(str)       RTest_startTest(str);
+#define IT(str)         RTest_startTest(str);
+#define XIT(str)        RTest_pendingTest(str);
 
 
 void start_suite();

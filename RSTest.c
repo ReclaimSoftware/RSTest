@@ -7,6 +7,7 @@
 void RTest_fail(char *message);
 
 static uint64_t RTestNumTests = 0;
+static uint64_t RTestNumPendingTests = 0;
 static char *RTestDescribeString = NULL;
 static char *RTestTestString = NULL;
 static struct timeval RTestT0;
@@ -20,6 +21,11 @@ void RTest_describe(char *str) {
 void RTest_startTest(char *str) {
     RTestTestString = str;
     RTestNumTests++;
+}
+
+
+void RTest_pendingTest(char *str) {
+    RTestNumPendingTests++;
 }
 
 
@@ -39,6 +45,11 @@ void end_suite() {
     fprintf(stderr, "All %lld tests passed in %lld microseconds.\n",
                         (long long)RTestNumTests,
                         (long long)microseconds);
+    if (RTestNumPendingTests >= 2) {
+        fprintf(stderr, "There were also %lld pending tests.\n", (long long)RTestNumPendingTests);
+    } else if (RTestNumPendingTests == 1) {
+        fprintf(stderr, "There was also 1 pending test.\n");
+    }
 }
 
 
