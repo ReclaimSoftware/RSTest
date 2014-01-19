@@ -27,6 +27,7 @@ FILE* assert_fopen(char *path, char *mode);
 
 void RTest_describe(char *str);
 void RTest_startTest(char *str);
+void RTest_pendingTest(char *str);
 
 
 #endif
